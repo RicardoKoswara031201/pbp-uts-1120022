@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "",
+        target: "https://uts-pbp-0sipdzol.hansyulian.space",
         changeOrigin: true,
         secure: false,
       },
