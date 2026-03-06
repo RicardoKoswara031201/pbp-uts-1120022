@@ -5,9 +5,9 @@ export interface File {
   id?: string;
   judul: string;
   deskripsi: string;
-  tahun: string;
+  tahun: number;
   kategori: Kategori;
   status: Status;
-  peminjam: string;
+  peminjam: {nama:string} | null;
   imageUrl: string;
 }

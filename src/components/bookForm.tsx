@@ -6,13 +6,13 @@ export default function BookForm({
   onSubmit,
 }: {
   initialData: File;
-  onSubmit: (data: File) => Promise<void>; // async
+  onSubmit: (data: File) => Promise<void>;
 }) {
   const [form, setForm] = useState<File>({
     ...initialData,
     judul: initialData.judul || "",
     deskripsi: initialData.deskripsi || "",
-    tahun: initialData.tahun || "",
+    tahun: initialData.tahun || 0,
   });
 
   const [error, setError] = useState("");
@@ -37,7 +37,7 @@ export default function BookForm({
 
     try {
       setIsSubmitting(true);
-      await onSubmit(form); // tunggu updateBook selesai
+      await onSubmit(form);
     } catch (err: any) {
       setError(err.message || "Terjadi kesalahan saat update");
     } finally {
